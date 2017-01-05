@@ -1,18 +1,18 @@
 var express = require('express');
 var app = new express();
 var mongoose = require('mongoose');
-var MongoService = process.env.DATABASE_SERVICE_NAME;
-app.set('MongoService',process.env.DATABASE_SERVICE_NAME.toUpperCase());
-app.set('MongoHost',process.env[app.get('MongoService') + '_SERVICE_HOST']);
-app.set('MongoPort',parseInt(process.env[app.get('MongoService') + '_SERVICE_PORT']));
-app.set('MongoUser',process.env[app.get('MongoService') + '_USER']);
-app.set('MongoPass',process.env[app.get('MongoService') + '_PASSWORD']);
-app.set('DbName', process.env[app.get('MongoService') + '_DATABASE']);
+
+var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
+      mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
+      mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'],
+      mongoDatabase = process.env[mongoServiceName + '_DATABASE'],
+      mongoPassword = process.env[mongoServiceName + '_PASSWORD'],
+      mongoUser = process.env[mongoServiceName + '_USER'];
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT|| 8080);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP ||process.env.IP|| '0.0.0.0');
 
 
-var mongoURL = 'mongodb://'+app.get('MongoUser')+':'+app.get('MongoPass')+'@'+app.get('MongoHost')+':'+app.get('MongoPort')+'/'+app.get('DbName');
+var mongoURL = 'mongodb://'+mongoUser+':'+mongoPassword+'@'+mongoHost+':'+mongoPort+'/'+mongoDatabase;
 
 
 var SEND = "Not Connected";

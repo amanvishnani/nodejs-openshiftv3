@@ -16,14 +16,15 @@ var mongoURL = 'mongodb://'+app.get('MongoUser')+':'+app.get('MongoPass')+'@'+ap
 
 
 var SEND = "Not Connected";
-mongoose.connect(mongoURL,(err)=>{
-    if(err) console.log(err);
-    else SEND='Connected';
-    SEND +='<br/>';
-    SEND +=mongoURL;
-    SEND +='<br/> Hello World';
-});
-
+// mongoose.connect(mongoURL,(err)=>{
+//     if(err) console.log(err);
+//     else SEND='Connected';
+//     SEND +='<br/>';
+//     SEND +=mongoURL;
+//     SEND +='<br/> Hello World';
+// });
+SEND +='<br/>';
+SEND +=mongoURL;
 
 app.get('/', function (req, res) {
   res.send(SEND);

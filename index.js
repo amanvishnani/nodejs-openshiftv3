@@ -24,7 +24,7 @@ var SEND = "Not Connected";
 //     SEND +='<br/> Hello World';
 // });
 SEND +='<br/>';
-SEND +=app.get('MongoService');
+SEND +=mongoServiceName;
 SEND +='<br/>';
 SEND +=mongoURL;
 

@@ -5,9 +5,9 @@ var MongoService = process.env.DATABASE_SERVICE_NAME;
 app.set('MongoService',process.env.DATABASE_SERVICE_NAME.toUpperCase());
 app.set('MongoHost',process.env[app.get('MongoService') + '_SERVICE_HOST']);
 app.set('MongoPort',parseInt(process.env[app.get('MongoService') + '_SERVICE_PORT']));
-app.set('MongoUser',process.env[MongoService + '_USER']);
-app.set('MongoPass',process.env[MongoService + '_PASSWORD']);
-app.set('DbName', process.env[MongoService + '_DATABASE']);
+app.set('MongoUser',process.env.USER);
+app.set('MongoPass',process.env.PASSWORD);
+app.set('DbName', process.env.DATABASE);
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT|| 8080);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP ||process.env.IP|| '0.0.0.0');
 

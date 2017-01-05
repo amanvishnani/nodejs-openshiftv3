@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-openshiftv3",
+  "version": "1.0.0",
+  "description": "A nodejs example for Openshift V3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanvishnani/nodejs-openshiftv3.git"
+  },
+  "author": "Aman Vishnani (aman62@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amanvishnani/nodejs-openshiftv3/issues"
+  },
+  "homepage": "https://github.com/amanvishnani/nodejs-openshiftv3#readme"
+}

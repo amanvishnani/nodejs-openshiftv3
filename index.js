@@ -8,7 +8,7 @@ app.set('MongoPort',parseInt(process.env[app.get('MongoService') + '_SERVICE_POR
 app.set('MongoUser',process.env[app.get('MongoService') + '_USER']);
 app.set('MongoPass',process.env[app.get('MongoService') + '_PASSWORD']);
 app.set('DbName', process.env[app.get('MongoService') + '_DATABASE']);
-app.set('port', parseInt(process.env.OPENSHIFT_NODEJS_PORT) || parseInt(process.env.PORT)|| 3000);
+app.set('port', parseInt(process.env.OPENSHIFT_NODEJS_PORT) || parseInt(process.env.PORT)|| 8080);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP ||process.env.IP|| '127.0.0.1');
 
 
